@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ARM">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM">
+      <Configuration>Release</Configuration>
+      <Platform>ARM</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|ARM64">
+      <Configuration>Debug</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ARM64">
+      <Configuration>Release</Configuration>
+      <Platform>ARM64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x86">
+      <Configuration>Debug</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x86">
+      <Configuration>Release</Configuration>
+      <Platform>x86</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{23b477df-b88d-4715-bcca-226a423eb79c}</ProjectGuid>
+    <Keyword>Linux</Keyword>
+    <RootNamespace>SKProxy</RootNamespace>
+    <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
+    <ApplicationType>Linux</ApplicationType>
+    <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
+    <TargetLinuxPlatform>Generic</TargetLinuxPlatform>
+    <LinuxProjectType>{FC1A4D80-50E9-41DA-9192-61C0DBAA00D2}</LinuxProjectType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x86'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+    <RemoteRootDir>/home/www/skproxy_bin_test</RemoteRootDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+    <RemoteRootDir>/home/www/SKProxy</RemoteRootDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'" Label="Configuration">
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'" Label="Configuration">
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <ConfigurationType>Makefile</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <RemoteCleanCommandLine>make clean</RemoteCleanCommandLine>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <RemoteCleanCommandLine>make clean</RemoteCleanCommandLine>
+  </PropertyGroup>
+  <ItemGroup>
+    <ClCompile Include="FprintfStderrLog.cpp" />
+    <ClCompile Include="HttpRequest.cpp" />
+    <ClCompile Include="json.cpp" />
+    <ClCompile Include="JsonCreate.cpp" />
+    <ClCompile Include="pevents.cpp" />
+    <ClCompile Include="SKClient.cpp" />
+    <ClCompile Include="SKClients.cpp" />
+    <ClCompile Include="SKGlobal.cpp" />
+    <ClCompile Include="SKGWLogger\SKLogger.cpp" />
+    <ClCompile Include="SKGWOrder\SKOFOrder.cpp" />
+    <ClCompile Include="SKGWOrder\SKOSBOrder.cpp" />
+    <ClCompile Include="SKGWOrder\SKOSOrder.cpp" />
+    <ClCompile Include="SKGWOrder\SKPreOFOrder.cpp" />
+    <ClCompile Include="SKGWOrder\SKPreOSOrder.cpp" />
+    <ClCompile Include="SKGWOrder\SKPreTFAlter.cpp" />
+    <ClCompile Include="SKGWOrder\SKPreTSAlter.cpp" />
+    <ClCompile Include="SKGWOrder\SKTFAlter.cpp" />
+    <ClCompile Include="SKGWOrder\SKTFOrder.cpp" />
+    <ClCompile Include="SKGWOrder\SKTSAlter.cpp" />
+    <ClCompile Include="SKGWOrder\SKTSOrder.cpp" />
+    <ClCompile Include="SKGWOther\SKConn.cpp" />
+    <ClCompile Include="SKGWOther\SKLogin.cpp" />
+    <ClCompile Include="SKGWOther\SKSession.cpp" />
+    <ClCompile Include="SKHeartbeat.cpp" />
+    <ClCompile Include="SKNet\SKClientSocket.cpp" />
+    <ClCompile Include="SKNet\SKServerSocket.cpp" />
+    <ClCompile Include="SKProxy.cpp" />
+    <ClCompile Include="SKServers.cpp" />
+    <ClCompile Include="SKThread.cpp" />
+    <ClCompile Include="Utility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HttpRequest.h" />
+    <ClInclude Include="json.h" />
+    <ClInclude Include="JsonCreate.h" />
+    <ClInclude Include="pevents.h" />
+    <ClInclude Include="SKBaseGW.h" />
+    <ClInclude Include="SKClient.h" />
+    <ClInclude Include="SKClients.h" />
+    <ClInclude Include="SKFormat.h" />
+    <ClInclude Include="SKGlobal.h" />
+    <ClInclude Include="SKGWLogger\SKLogger.h" />
+    <ClInclude Include="SKGWLogger\SKLoggerServer.h" />
+    <ClInclude Include="SKGWOrder\SKBaseGWOrder.h" />
+    <ClInclude Include="SKGWOrder\SKGWOrderServer.h" />
+    <ClInclude Include="SKGWOrder\SKOFOrder.h" />
+    <ClInclude Include="SKGWOrder\SKOSBOrder.h" />
+    <ClInclude Include="SKGWOrder\SKOSOrder.h" />
+    <ClInclude Include="SKGWOrder\SKPreOFOrder.h" />
+    <ClInclude Include="SKGWOrder\SKPreOSOrder.h" />
+    <ClInclude Include="SKGWOrder\SKPreTFAlter.h" />
+    <ClInclude Include="SKGWOrder\SKPreTSAlter.h" />
+    <ClInclude Include="SKGWOrder\SKTFAlter.h" />
+    <ClInclude Include="SKGWOrder\SKTFOrder.h" />
+    <ClInclude Include="SKGWOrder\SKTSAlter.h" />
+    <ClInclude Include="SKGWOrder\SKTSOrder.h" />
+    <ClInclude Include="SKGWOther\SKConn.h" />
+    <ClInclude Include="SKGWOther\SKGWConnServer.h" />
+    <ClInclude Include="SKGWOther\SKGWLoginServer.h" />
+    <ClInclude Include="SKGWOther\SKLogin.h" />
+    <ClInclude Include="SKGWOther\SKSession.h" />
+    <ClInclude Include="SKHeartbeat.h" />
+    <ClInclude Include="SKInterface\ISKClientSocketCallback.h" />
+    <ClInclude Include="SKInterface\ISKHeartbeatCallback.h" />
+    <ClInclude Include="SKInterface\ISKRequestCallback.h" />
+    <ClInclude Include="SKInterface\ISKServerSocketCallback.h" />
+    <ClInclude Include="SKNet\SKClientSocket.h" />
+    <ClInclude Include="SKNet\SKServerSocket.h" />
+    <ClInclude Include="SKServers.h" />
+    <ClInclude Include="SKThread.h" />
+    <ClInclude Include="Utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="makefile" />
+  </ItemGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <RemotePreBuildEvent>
+      <Command>make RELEASE=1 MODE=1</Command>
+    </RemotePreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <RemotePreBuildEvent>
+      <Command>make RELEASE=1 MODE=1</Command>
+    </RemotePreBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
